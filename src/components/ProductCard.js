@@ -14,7 +14,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="group relative p-4 bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+    <div className="group relative p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-gray-700/50 overflow-hidden hover:shadow-lg dark:hover:shadow-gray-700/70 transition-all duration-300 flex flex-col h-full">
       <Link href={`/product/${product.id}`} className="flex flex-col h-full">
         <div className="aspect-auto w-full overflow-hidden rounded-t-lg">
           <Image
@@ -26,16 +26,16 @@ const ProductCard = ({ product }) => {
           />
         </div>
         <div className="p-4 mt-auto">
-          <h3 className="text-sm font-medium text-gray-900 line-clamp-2">
+          <h3 className="text-sm font-medium text-gray-900 dark:text-white line-clamp-2">
             {product.title}
           </h3>
           <div className="mt-2 flex items-center justify-between">
-            <p className="text-lg font-semibold text-gray-900">
+            <p className="text-lg font-semibold text-gray-900 dark:text-white">
               ${product.price}
             </p>
             <div className="flex items-center">
               <span className="text-yellow-400">★</span>
-              <span className="ml-1 text-sm text-gray-600">
+              <span className="ml-1 text-sm text-gray-600 dark:text-gray-400">
                 {product.rating.rate} ({product.rating.count})
               </span>
             </div>
@@ -44,10 +44,10 @@ const ProductCard = ({ product }) => {
       </Link>
       <button
         onClick={handleAddToCart}
-        className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-colors duration-300"
+        className="absolute top-2 right-2 p-2 bg-white dark:bg-gray-800 rounded-full shadow-md dark:shadow-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
         aria-label="Add to cart"
       >
-        <ShoppingCartIcon className="h-5 w-5 text-gray-700" />
+        <ShoppingCartIcon className="h-5 w-5 text-gray-700 dark:text-gray-300" />
       </button>
     </div>
   );

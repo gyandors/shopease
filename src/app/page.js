@@ -50,9 +50,9 @@ export default async function Home({ searchParams }) {
   const filteredProducts = filterAndSortProducts(products, category, sortBy);
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
           Available Products
         </h1>
         <FilterBar />
@@ -69,13 +69,13 @@ export default async function Home({ searchParams }) {
 // Loading component
 export function Loading() {
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
           Available Products
         </h1>
-        <div className="bg-white p-4 rounded-lg shadow-md mb-6 animate-pulse">
-          <div className="h-10 bg-gray-200 rounded"></div>
+        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md dark:shadow-gray-700/50 mb-6 animate-pulse">
+          <div className="h-10 bg-gray-200 dark:bg-gray-700 rounded"></div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {[...Array(8)].map((_, index) => (

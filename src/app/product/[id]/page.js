@@ -33,15 +33,18 @@ export default async function ProductPage({ params }) {
     .slice(0, 4); // Show up to 4 related products
 
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-gray-900 flex items-center gap-2 mb-4 font-bold">
-          <Link href="/">
+        <div className="text-gray-900 dark:text-white flex items-center gap-2 mb-4 font-bold">
+          <Link
+            href="/"
+            className="text-gray-900 dark:text-white hover:text-gray-700 dark:hover:text-gray-300"
+          >
             <ArrowLeftIcon className="w-5 h-5" />
           </Link>
           {product.category} / {product.title}
         </div>
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg dark:shadow-gray-700/50 overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-8">
             <div className="relative aspect-square">
               <Image
@@ -52,21 +55,23 @@ export default async function ProductPage({ params }) {
               />
             </div>
             <div className="space-y-6">
-              <h1 className="text-3xl font-bold text-gray-900">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
                 {product.title}
               </h1>
               <div className="flex items-center space-x-4">
-                <p className="text-2xl font-semibold text-gray-900">
+                <p className="text-2xl font-semibold text-gray-900 dark:text-white">
                   ${product.price}
                 </p>
                 <div className="flex items-center">
                   <span className="text-yellow-400">★</span>
-                  <span className="ml-1 text-gray-600">
+                  <span className="ml-1 text-gray-600 dark:text-gray-400">
                     {product.rating.rate} ({product.rating.count} reviews)
                   </span>
                 </div>
               </div>
-              <p className="text-gray-600">{product.description}</p>
+              <p className="text-gray-600 dark:text-gray-400">
+                {product.description}
+              </p>
               <div className="pt-4">
                 <AddToCartButton product={product} />
               </div>
@@ -77,7 +82,7 @@ export default async function ProductPage({ params }) {
         {/* Related Products Section */}
         {relatedProducts.length > 0 && (
           <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Related Products
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -95,7 +100,7 @@ export default async function ProductPage({ params }) {
 // Loading component
 export function Loading() {
   return (
-    <main className="min-h-screen bg-gray-100">
+    <main className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <ProductDetailSkeleton />
       </div>

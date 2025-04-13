@@ -51,7 +51,7 @@ const FilterBar = () => {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-md mb-6">
+    <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md dark:shadow-gray-700/50 mb-6">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div className="flex flex-wrap gap-2">
           {categories.map((category) => (
@@ -61,7 +61,7 @@ const FilterBar = () => {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 selectedCategory === category
                   ? "bg-blue-600 text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  : "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
               }`}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -69,14 +69,17 @@ const FilterBar = () => {
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <label htmlFor="sort" className="text-sm font-medium text-gray-700">
+          <label
+            htmlFor="sort"
+            className="text-sm font-medium text-gray-700 dark:text-gray-300"
+          >
             Sort by:
           </label>
           <select
             id="sort"
             value={sortBy}
             onChange={handleSortChange}
-            className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+            className="block w-full rounded-md border-gray-300 dark:border-gray-600 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm dark:bg-gray-700 dark:text-white"
           >
             {sortOptions.map((option) => (
               <option key={option.value} value={option.value}>
