@@ -19,6 +19,7 @@ A modern e-commerce platform built with Next.js, Firebase, and Tailwind CSS.
   - Responsive design
   - Clean and intuitive interface
   - Tailwind CSS styling
+  - Dark mode
 
 ## Tech Stack
 
