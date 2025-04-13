@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ShopEase - E-commerce Platform
+
+A modern e-commerce platform built with Next.js, Firebase, and Tailwind CSS.
+
+## Features
+
+- 🔐 **Authentication System**
+
+  - User registration and login
+  - Firebase authentication integration
+
+- 🛒 **Shopping Cart**
+
+  - Add/remove products
+  - View cart items
+  - Protected checkout (requires authentication)
+
+- 🎨 **Modern UI**
+  - Responsive design
+  - Clean and intuitive interface
+  - Tailwind CSS styling
+
+## Tech Stack
+
+- **Frontend Framework**: Next.js 13+ (App Router)
+- **Authentication**: Firebase Authentication
+- **Styling**: Tailwind CSS
+- **Icons**: Heroicons
+- **State Management**: React Context API
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 14+ and npm
+- Firebase account
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/gyandors/shopease.git
+   cd shopease
+   ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Authentication Flow
 
-## Deploy on Vercel
+1. **User Registration**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   - Navigate to `/signup`
+   - Enter email and password
+   - Account created in Firebase
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **User Login**
+
+   - Navigate to `/login`
+   - Enter credentials
+   - Access protected routes
